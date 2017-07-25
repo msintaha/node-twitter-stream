@@ -26,11 +26,13 @@ var stream = twitter.stream('statuses/filter', { track: 'javascript,angular' });
 
 io.on('connect', function(socket) {
     stream.on('tweet', function (tweet) {
-        var data = {};
-        data.name = tweet.user.name;
-        data.screen_name = tweet.user.screen_name;
-        data.text = tweet.text;
-        data.avatar = tweet.user.profile_image_url;
+        var data = {
+            'name': tweet.user.name,
+            'screen_name': tweet.user.screen_name,
+            'text': tweet.text,
+            'avatar': tweet.user.profile_image_url
+        };
+
         socket.emit('tweets', data);
     });
 });
