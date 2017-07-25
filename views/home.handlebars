@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example App</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Simple Stream</h1>
+<br>
+<div id="tweet-container"></div>
+
+<script type="text/javascript">
+    var socket = io('http://localhost:3000');
+
+    socket.on('tweets', function (tweet) {
+        var html = '<div class="row"><div class="container"><img src="' + tweet.user_profile_image + '" class="avatar pull-left" style="padding:10px;"/><div class="names"><h5>' + tweet.name + ' -  @' + tweet.screen_name + '</h5></div><div class="contents"><span class="text">' + tweet.text + '</span></div></div></div><hr>';
+        $('#tweet-container').prepend(html);
+    });
+</script>
+</body>
+</html>

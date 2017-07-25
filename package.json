@@ -1,0 +1,20 @@
+{
+  "name": "twitter-stream",
+  "version": "1.0.0",
+  "description": "An app for streaming tweets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mifta",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "jade": "^1.11.0",
+    "socket.io": "^2.0.3",
+    "twit": "^2.2.9"
+  },
+  "devDependencies": {
+    "express-handlebars": "^3.0.0"
+  }
+}
