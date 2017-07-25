@@ -16,10 +16,10 @@ app.get('/', function(req, res) {
 server.listen(port);
 
 var twitter = new Twit({
-    consumer_key: 'ClkspMmRMOTAJvysssMpylY56',
-    consumer_secret: '34qxajeFKcPTvMocYT5xMdOTZrQohbOAO1btgpRihJuA1tGxlM',
-    access_token: '138086873-jMTpMLwOTPKRRDQ9MnlgUvwIollZTadG3i9ZnRlz',
-    access_token_secret: 'xFdxY1bV2aRaxvy5AJ16i7kCxsVNe6MzThTr5QgJxJzwJ'
+    consumer_key: '',
+    consumer_secret: '',
+    access_token: '',
+    access_token_secret: ''
 });
 
 var stream = twitter.stream('statuses/filter', { track: 'javascript,angular' });
@@ -30,9 +30,7 @@ io.on('connect', function(socket) {
         data.name = tweet.user.name;
         data.screen_name = tweet.user.screen_name;
         data.text = tweet.text;
-        data.user_profile_image = tweet.user.profile_image_url;
+        data.avatar = tweet.user.profile_image_url;
         socket.emit('tweets', data);
     });
 });
-
-
