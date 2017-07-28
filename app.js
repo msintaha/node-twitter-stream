@@ -22,7 +22,7 @@ const twitter = new Twit({
     access_token_secret: 'xFdxY1bV2aRaxvy5AJ16i7kCxsVNe6MzThTr5QgJxJzwJ'
 });
 
-const stream = twitter.stream('statuses/filter', { track: 'javascript,angular' });
+const stream = twitter.stream('statuses/filter', { track: 'nodejs,angular' });
 
 io.on('connect', function(socket) {
     stream.on('tweet', function (tweet) {
