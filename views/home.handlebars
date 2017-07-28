@@ -17,7 +17,8 @@
     const socket = io('http://localhost:3000');
 
     socket.on('tweets', function (tweet) {
-        const html = '<div class="row"><div class="container"><img src="' + tweet.avatar + '" class="avatar pull-left" style="padding:10px;"/><div class="names"><h5>' + tweet.name + ' -  @' + tweet.screen_name + '</h5></div><div class="contents"><span class="text">' + tweet.text + '</span></div></div></div><hr>';
+        const html = '<div class="row"><div class="container"><img src="' + tweet.avatar + '" class="avatar pull-left" style="padding:10px;"/><h5>' + tweet.name + ' -  @' + tweet.screen_name + '</h5><span class="text">' + tweet.text + '</span></div></div><hr>';
+
         $('#tweet-container').prepend(html);
     });
 </script>
