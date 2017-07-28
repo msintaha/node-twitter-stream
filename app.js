@@ -1,8 +1,8 @@
 const express = require('express'),
-    app     = express(),
-    port    = process.env.PORT || 3000,
-    hbs  = require('express-handlebars'),
-    server  = require('http').createServer(app),
+    app = express(),
+    port = process.env.PORT || 3000,
+    hbs = require('express-handlebars'),
+    server = require('http').createServer(app),
     Twit = require('twit'),
     io 	= require('socket.io')(server);
 
