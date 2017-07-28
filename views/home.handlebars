@@ -9,15 +9,15 @@
 </head>
 <body>
 
-<h1><span class="label label-info">Simple Twitter Stream</span></h1>
+<h1 align="center"><span class="label label-info">Simple Twitter Stream</span></h1>
 <br>
 <div id="tweet-container"></div>
 
 <script type="text/javascript">
-    var socket = io('http://localhost:3000');
+    const socket = io('http://localhost:3000');
 
     socket.on('tweets', function (tweet) {
-        var html = '<div class="row"><div class="container"><img src="' + tweet.avatar + '" class="avatar pull-left" style="padding:10px;"/><div class="names"><h5>' + tweet.name + ' -  @' + tweet.screen_name + '</h5></div><div class="contents"><span class="text">' + tweet.text + '</span></div></div></div><hr>';
+        const html = '<div class="row"><div class="container"><img src="' + tweet.avatar + '" class="avatar pull-left" style="padding:10px;"/><div class="names"><h5>' + tweet.name + ' -  @' + tweet.screen_name + '</h5></div><div class="contents"><span class="text">' + tweet.text + '</span></div></div></div><hr>';
         $('#tweet-container').prepend(html);
     });
 </script>
